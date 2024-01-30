@@ -51,6 +51,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.app.NotificationCompat.BadgeIconType
 import com.example.jetpackcomposecatalog.ui.theme.JetpackComposeCatalogTheme
@@ -152,7 +153,7 @@ fun MyBadgeBox() {
                 contentColor = Color.White,
                 modifier = Modifier.padding(2.dp)
             )
-        },
+        }
     ) {
         Icon(
             modifier = Modifier.size(50.dp),
@@ -166,6 +167,7 @@ fun MyBadgeBox() {
 /** Surface es lo mismo que Card, solo que en Card vienen ya predispuestos los elementos
  * Las Card son surface con contenido ya preparado.
  * */
+
 @Composable
 fun MyCard() {
     Card(
