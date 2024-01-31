@@ -1,11 +1,13 @@
 package com.example.jetpackcomposecatalog
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -20,6 +22,7 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CardElevation
@@ -88,14 +91,28 @@ class SelectionActivity : ComponentActivity() {
                         }
                         MyRadioButtonList( name ) { name = it }
                     }*/
+                    /*
                     Column {
                         MyCard()
                         // Surface {}
                         Divider(Modifier.fillMaxWidth(), color = Color.Red) // Linea de division
                         MyBadgeBox()
                         MyDropDownMenu()
+                        AdvanceSlider()
+                    }*/
+                    var isShow by remember { mutableStateOf( false ) }
+                    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center ) {
+                        Button(onClick = { isShow = true }) {
+                            Text(text = "Mostrar Dialogo")
+                        }
+                        /* MyAlertDialog(
+                            show = isShow,
+                            onDissmiss = { isShow = false },
+                            onConfirm = { Log.i("CONFIRM", "Dialogo confirmado") }) */
+                        MyConfirmDialog(show = isShow) {
+                            isShow = false
+                        }
                     }
-
                 }
             }
         }
@@ -193,25 +210,29 @@ fun MyCard() {
 fun MyRadioButtonList(selected: String, onItemSelected: (String) -> Unit) {
 
     Column(Modifier.fillMaxWidth()) {
-        Row(Modifier.fillMaxWidth()) {
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
             RadioButton(
                 selected = selected == "radio 1",
                 onClick = { onItemSelected("radio 1") })
             Spacer(modifier = Modifier.width(16.dp))
             Text(text = "radio 1")
+        }
 
+        Row( Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically ) {
             RadioButton(
                 selected = selected == "radio 2",
                 onClick = { onItemSelected("radio 2") })
             Spacer(modifier = Modifier.width(16.dp))
             Text(text = "radio 2")
-
+        }
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
             RadioButton(
                 selected = selected == "radio 3",
                 onClick = { onItemSelected("radio 3") })
             Spacer(modifier = Modifier.width(16.dp))
             Text(text = "radio 3")
-
+        }
+        Row (Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically ){
             RadioButton(
                 selected = selected == "radio 4",
                 onClick = { onItemSelected("radio 4") })
