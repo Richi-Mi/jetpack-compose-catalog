@@ -100,6 +100,7 @@ class SelectionActivity : ComponentActivity() {
                         MyDropDownMenu()
                         AdvanceSlider()
                     }*/
+                    /*
                     var isShow by remember { mutableStateOf( false ) }
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center ) {
                         Button(onClick = { isShow = true }) {
@@ -112,7 +113,8 @@ class SelectionActivity : ComponentActivity() {
                         MyConfirmDialog(show = isShow) {
                             isShow = false
                         }
-                    }
+                    }*/
+                    SuperHeroStickyView()
                 }
             }
         }
