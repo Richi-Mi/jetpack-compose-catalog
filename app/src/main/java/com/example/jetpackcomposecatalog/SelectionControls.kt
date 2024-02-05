@@ -114,7 +114,7 @@ class SelectionActivity : ComponentActivity() {
                             isShow = false
                         }
                     }*/
-                    SuperHeroStickyView()
+                    ScaffoldExample()
                 }
             }
         }
