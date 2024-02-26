@@ -76,6 +76,8 @@ class MainActivity : ComponentActivity() {
                     })*/
                     // MyButtonExample()
                     // MyProggressAdvance()
+
+                    /** Navegación Compose
                     val navigationController = rememberNavController()
                     NavHost(
                         startDestination = Rutas.Pantalla1.route,
@@ -110,7 +112,8 @@ class MainActivity : ComponentActivity() {
                                 navigationController = navigationController,
                                 name = backStackEntry.arguments?.getString("name") )
                         }
-                    }
+                    } */
+                    AnimationwithCrossfade()
                 }
             }
         }
